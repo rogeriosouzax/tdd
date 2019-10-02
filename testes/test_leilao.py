@@ -5,9 +5,9 @@ from dominio import Usuario, Leilao, Lance
 class TestLeilao(TestCase):
 
     def setUp(self) -> None:
-        self.roger = Usuario("Rogerio")
-        self.pato = Usuario("Pato")
-        self.poli = Usuario("Poliana")
+        self.roger = Usuario("Rogerio", 1000.0)
+        self.pato = Usuario("Pato", 250.0)
+        self.poli = Usuario("Poliana", 350.0)
         self.lance_do_roger = Lance(self.roger, 35.0)
         self.lance_do_pato = Lance(self.pato, 10.0)
         self.lance_da_poli = Lance(self.poli, 17.0)

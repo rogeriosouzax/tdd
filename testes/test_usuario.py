@@ -1,6 +1,8 @@
 from dominio import Usuario, Leilao
 import pytest
 
+from excecoes import LanceInvalido
+
 
 @pytest.fixture
 def roger():
@@ -31,5 +33,5 @@ def test_deve_permitir_propor_lance_quando_valor_e_igual_ao_valor_da_carteira(ro
 
 
 def test_nao_deve_permitir_propor_lance_com_valor_maior_que_o_da_carteira(roger, leilao):
-    with pytest.raises(ValueError):
+    with pytest.raises(LanceInvalido):
         roger.propoe_lance(leilao, 200.0)

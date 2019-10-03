@@ -1,5 +1,6 @@
 from unittest import TestCase
 from dominio import Usuario, Leilao, Lance
+from excecoes import LanceInvalido
 
 
 class TestLeilao(TestCase):
@@ -81,6 +82,6 @@ class TestLeilao(TestCase):
         #     self.assertEqual(1, quantidade_lances_recebidos)
 
         # Outra forma de fazer o tratamento de erro
-        with self.assertRaises(ValueError):
+        with self.assertRaises(LanceInvalido):
             self.leilao.propoe(self.lance_do_roger)
             self.leilao.propoe(lance_roger_2)
